@@ -1,0 +1,55 @@
+﻿@model Slider
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/manage/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Slider Edit</h1>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form asp-action="create" method="post">
+                <div class="form-group">
+                    <label asp-for="Order">Order</label>
+                    <input asp-for="Order" class="form-control" placeholder="Enter Order">
+                    <span class="text-danger" asp-validation-for="Order"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title1">Title1</label>
+                    <input asp-for="Title1" type="text" class="form-control" placeholder="Enter Title1">
+                    <span class="text-danger" asp-validation-for="Title1"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Title2">Title2</label>
+                    <input asp-for="Title2" type="text" class="form-control" placeholder="Enter Title2">
+                    <span class="text-danger" asp-validation-for="Title2"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ButtonText">ButtonText</label>
+                    <input asp-for="ButtonText" type="text" class="form-control" placeholder="Enter BtnText">
+                    <span class="text-danger" asp-validation-for="ButtonText"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="ButtonUrl">BtnUrl</label>
+                    <input asp-for="ButtonUrl" type="text" class="form-control" placeholder="Enter ButtonUrl">
+                    <span class="text-danger" asp-validation-for="ButtonUrl"></span>
+                </div>
+                <div class="form-group">
+                    <label>Image File</label>
+                    <input asp-for="ImageFile" accept="image/*" class="form-control" placeholder="Enter ImageFile">
+                    <span class="text-danger" asp-validation-for="ImageFile"></span>
+                </div>
+                <img width="200" src="@Url.Content("~/uploads/sliders/" + Model.Image)" />
+                <div class="form-group">
+                    <label asp-for="Description">Desc</label>
+                    <textarea asp-for="Description" rows="3" type="text" class="form-control" placeholder="Enter Description"></textarea>
+                    <span class="text-danger" asp-validation-for="Description"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
